@@ -1,0 +1,187 @@
+/////////////////////////unordered_set/////////////////////////////////////////////////////
+unordered_set<int> s;
+    s.insert(1);
+    s.insert(2);
+    s.find(2);
+    for (int i = 1; i <= 10; i++) {
+    s.insert(i);
+  }
+  cout << "Elements present in the unordered set: ";
+  for (auto it = s.begin(); it != s.end(); it++) {
+    cout << * it << " ";
+  }
+  s.erase(s.begin());
+  cout << "Elements after deleting the first element: ";
+  for (auto it = s.begin(); it != s.end(); it++) {
+    cout << * it << " ";
+  }
+  cout << endl;
+
+  cout << "The size of the unordered set is: " << s.size() << endl;
+
+  if (s.empty() == false)
+    cout << "The unordered set is not empty " << endl;
+  else
+    cout << "The unordered set is empty" << endl;
+  s.clear();
+  cout << "Size of the unordered set after clearing all the elements: " << s.size();
+
+
+    // if(s.find(2)!=s.end())
+    // cout<<"true"<<endl;
+    }
+
+///////////////////////////////////////////////vector////////////////////////////////////////////
+    vector < int > v;
+
+  for (int i = 0; i < 10; i++) {
+    v.push_back(i); //inserting elements in the vector
+  }
+
+  cout << "the elements in the vector: ";
+  for (auto it = v.begin(); it != v.end(); it++)
+    cout << * it << " ";
+
+  cout << "\nThe front element of the vector: " << v.front();
+  cout << "\nThe last element of the vector: " << v.back();
+  cout << "\nThe size of the vector: " << v.size();
+  cout << "\nDeleting element from the end: " << v[v.size() - 1];
+  v.pop_back();
+
+  cout << "\nPrinting the vector after removing the last element:" << endl;
+  for (int i = 0; i < v.size(); i++)
+    cout << v[i] << " ";
+
+  cout << "\nInserting 5 at the beginning:" << endl;
+  v.insert(v.begin(), 5);
+  cout << "The first element is: " << v[0] << endl;
+  cout << "Erasing the first element" << endl;
+  v.erase(v.begin());
+  cout << "Now the first element is: " << v[0] << endl;
+
+  if (v.empty())
+    cout << "\nvector is empty";
+  else
+    cout << "\nvector is not empty" << endl;
+
+  v.clear();
+  cout << "Size of the vector after clearing the vector: " << v.size();
+  }
+   //////////////////////////unorderd map///////////////////////////////////////////
+    unordered_map < int, int > mp;
+   for (int i = 1; i <= 5; i++) {
+    mp.insert({ i , i * 10});
+  }
+
+  cout << "Elements present in the map: " << endl;
+  cout << "Key\tElement" << endl;
+  for (auto it = mp.begin(); it != mp.end(); it++) {
+    cout << it -> first << "\t" << it -> second << endl;
+  }
+
+  int n = 2;
+  if (mp.find(2) != mp.end())
+    cout << n << " is present in map" << endl;
+
+  mp.erase(mp.begin());
+  cout << "Elements after deleting the first element: " << endl;
+  cout << "Key\tElement" << endl;
+  for (auto it = mp.begin(); it != mp.end(); it++) {
+    cout << it -> first << "\t" << it -> second << endl;
+  }
+
+  cout << "The size of the map is: " << mp.size() << endl;
+
+  if (mp.empty() == false)
+    cout << "The map is not empty " << endl;
+  else
+    cout << "The map is empty" << endl;
+  mp.clear();
+  cout << "Size of the set after clearing all the elements: " << mp.size();
+}
+
+/////////////////////////queue/////////////////////////////
+void printqueue(queue<int> q1)
+{
+    queue<int> q2=q1;
+    while(!q2.empty())
+    {
+        cout<<q2.front()<<"\n";
+        q2.pop();
+    }
+}
+int main()
+{
+    queue<int> q;
+    for(int i=1;i<=5;i++)
+    q.push(i);
+    
+    cout<<"The elements of the queue are:"<<endl;
+    printqueue(q);
+    
+    cout<<"The size of the queue: "<<q.size()<<endl;
+    cout<<"The front element of the queue: "<<q.front()<<endl;
+    cout<<"The last element of the queue: "<<q.back()<<endl;
+    cout<<"Pop the front element: "<<endl;
+    q.pop();
+    printqueue(q);
+}
+
+////////////////////////////stack//////////////////////////
+void printstack(stack<int> s1)
+{
+    stack<int> s2=s1;
+    while(!s2.empty())
+    {
+        cout<<s2.top()<<"\n";
+        s2.pop();
+    }
+}
+int main()
+{
+    stack<int> s;
+    for(int i=1;i<=5;i++)
+    s.push(i);
+    
+    cout<<"The elements of the stack are:"<<endl;
+    printstack(s);
+    
+    cout<<"The size of the stack: "<<s.size()<<endl;
+    cout<<"The top element of the queue: "<<s.top()<<endl;
+    cout<<"Pop the top element: "<<endl;
+    s.pop();
+    printstack(s);
+}
+///////////////////////deque/////////////////////////////////
+void printdeque(deque<int> dq)
+{
+    deque<int>::iterator it;
+    for(it=dq.begin();it!=dq.end();it++)
+    {
+        cout<<*it<<" ";
+    }
+    cout<<endl;
+}
+int main()
+{
+    deque<int> dq;
+    dq.push_back(10);
+    dq.push_back(20);
+    dq.push_front(30);
+    dq.push_front(40);
+    dq.push_front(50);
+    
+    cout<<"The elements in the deque are: ";
+    printdeque(dq);
+    
+    cout<<"The size of the deque is: "<<dq.size()<<endl;
+    cout<<"The first element in the deque: "<<dq.front()<<endl;
+    cout<<"Deleting the first element"<<endl;
+    dq.pop_front();
+    printdeque(dq);
+    cout<<"The last element of the deque: "<<dq.back()<<endl;
+    cout<<"Deleting the last element"<<endl;
+    dq.pop_back();
+    printdeque(dq);
+    
+}

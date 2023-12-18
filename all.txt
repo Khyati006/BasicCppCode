@@ -1,0 +1,248 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+    cout<< "hello world";
+    return 0;
+}
+// This is singleline comment
+/*This is multiline comment
+hence proves
+*/
+// and short cut for to comment
+//  the multilple line is to select and ctrl+/ and use again to decomment the same
+
+int sum;
+    int a=4;
+    int b=5;
+    float pi=3.14;
+    char k='k';
+    cout<< " This is tutorial 4" <<"The value of a is\n "<<a<<"The value of b is \n"<<b<<"The value of pi is:"<<pi<<"The name is\n"<<k;
+    return 0;
+
+int glo=6;
+void sum(){
+    cout<<"\n"<<glo;//This is global variable 6
+
+}
+int main(){
+    int glo=45;
+    // int sum;
+    // int a=4;
+    // int b=5;
+    // float pi=3.14;
+    // char k='k';
+    bool is_true=true;
+    // cout<< " This is tutorial 4" <<"The value of a is\n "<<a<<"The value of b is \n"<<b<<"The value of pi is:"<<pi<<"The name is\n"<<k;
+    cout<<glo<<"\n"<<is_true;//This will print the local variable 45 and is_true will print 1 as the value is true.
+    sum();//This will print the global variable 6
+    return 0;
+}
+
+int num1, num2;
+    cout<<"Enter the value of num 1:";
+     cin>>num1;
+    cout<<"Enter the value of num 2:";
+    cin>>num2;
+    cout<<"The sum of two num is"<<num1+num2;
+
+    int a,b;
+    cout<<"Enter the value of a:"<<endl;
+    cin>> a;
+    cout<<"Enteer the value of b"<<endl;
+    cin>>b;
+    cout<<" Following are the Operators in cpp:"<<endl;
+    cout<<a+b<<endl;
+    cout<<a-b<<endl;
+    cout<<a*b<<endl;
+    cout<<a/b<<endl;
+    cout<<a%b<<endl;
+    cout<<a++<<endl;
+    cout<<+a<<endl;
+    cout<<endl;
+    cout<<"This are the logical operators in cpp:";
+    cout<<((a==b)&&(a<b))<<endl;
+    cout<<((a!=b)||(a<b))<<endl;
+
+    int a=7;
+    cout<<"The global variable is"<<::a<<endl;
+    cout<<"The local variable is:"<<a<<endl;
+    float x=34;
+    float & y=x;
+    cout<<x<<endl;
+    cout<<y<<endl;
+
+    //now time to typecast
+    int a=45;
+    cout<<"The value of a is"<<(float)a;
+     //now time to typecast
+    int a=45;
+    float b=5.5;
+    cout<<"The value of a is"<<(float)a<<endl;
+    int c=int(b);
+
+    cout<<a+b<<endl;
+    cout<<a+int(b)<<endl;
+    cout<<a+(int)b<<endl;
+    return 0;
+
+    //constant
+   const int a=3;
+   cout<<a<<endl;
+   int x=5,b=45,c=955;
+   cout<<setw(5)<<x<<endl; #include<iomanip>
+   cout<<setw(5)<<b<<endl;
+   cout<<setw(5)<<c<<endl;
+
+   #include<iostream>
+// using namespace std;
+
+// typedef struct employee
+// {
+//     /* data */
+//     int eId; //4
+//     char favChar; //1
+//     float salary; //4
+// } ep;//now we can use ep directly no need to use struct.
+
+// union money
+// {
+//     /* data */
+//     int rice; //4
+//     char car; //1
+//     float pounds; //4
+// };
+
+
+// int main(){
+//     enum Meal{ breakfast, lunch, dinner};
+//     Meal m1 = lunch;
+//     cout<<(m1==2);
+//     cout<<breakfast;
+//     cout<<lunch;
+//     cout<<dinner; 
+//     // union money m1;
+//     // m1.rice = 34;
+//     // m1.car = 'c';
+//     // cout<<m1.car;
+    
+
+//     // ep harry;
+//     // struct employee shubham;
+//     // struct employee rohanDas;
+//     // harry.eId = 1;
+//     // harry.favChar = 'c';
+//     // harry.salary = 120000000;
+//     // cout<<"The value is "<<harry.eId<<endl; 
+//     // cout<<"The value is "<<harry.favChar<<endl; 
+//     // cout<<"The value is "<<harry.salary<<endl; 
+//     return 0;
+// }
+
+#include<iostream>
+using namespace std;
+
+int sum(int a, int b){
+    int c = a + b;
+    return c;
+}
+
+// This will not swap a and b
+void swap(int a, int b){ //temp a b
+    int temp = a;        //4   4  5   
+    a = b;               //4   5  5
+    b = temp;            //4   5  4 
+}
+
+// Call by reference using pointers
+void swapPointer(int* a, int* b){ //temp a b
+    int temp = *a;          //4   4  5   
+    *a = *b;               //4   5  5
+    *b = temp;            //4   5  4 
+}
+
+// Call by reference using C++ reference Variables
+// int & 
+void swapReferenceVar(int &a, int &b){ //temp a b
+    int temp = a;          //4   4  5   
+    a = b;               //4   5  5
+    b = temp;            //4   5  4 
+    // return a;
+}
+
+int main(){
+    int x =4, y=5;
+    // cout<<"The sum of 4 and 5 is "<<sum(a, b);
+    cout<<"The value of x is "<<x<<" and the value of y is "<<y<<endl;
+    // swap(x, y); // This will not swap a and b
+    // swapPointer(&x, &y); //This will swap a and b using pointer reference
+    swapReferenceVar(x, y); //This will swap a and b using reference variables
+    // swapReferenceVar(x, y) = 766; //This will swap a and b using reference variables
+    cout<<"The value of x is "<<x<<" and the value of y is "<<y<<endl; 
+    return 0;
+}
+
+#include<iostream>
+using namespace std;
+
+inline int product(int a, int b){
+    // Not recommended to use below lines with inline functions
+    // static int c=0; // This executes only once
+    // c = c + 1; // Next time this function is run, the value of c will be retained
+    return a*b;
+}
+
+float moneyReceived(int currentMoney, float factor=1.04){
+    return currentMoney * factor;
+}
+
+// int strlen(const char *p){
+
+// }
+int main(){
+    int a, b;
+    // cout<<"Enter the value of a and b"<<endl;
+    // cin>>a>>b;
+    // cout<<"The product of a and b is "<<product(a,b)<<endl;
+    int money = 100000;
+    cout<<"If you have "<<money<<" Rs in your bank account, you will recive "<<moneyReceived(money)<< "Rs after 1 year"<<endl;
+    cout<<"For VIP: If you have "<<money<<" Rs in your bank account, you will recive "<<moneyReceived(money, 1.1)<< " Rs after 1 year";
+    return 0;
+}
+
+#include<iostream>
+using namespace std;
+//function overloading
+int sum(float a, int b){
+    cout<<"Using function with 2 arguments"<<endl;
+    return a+b;
+}
+
+int sum(int a, int b, int c){
+    cout<<"Using function with 3 arguments"<<endl;
+    return a+b+c;
+}
+
+// Calculate the volume of a cylinder
+int volume(double r, int h){
+    return(3.14 * r *r *h);
+}
+
+// Calculate the volume of a cube
+int volume(int a){
+    return (a * a * a);
+}
+
+// Rectangular box
+int volume (int l, int b, int h){
+    return (l*b*h);
+}
+
+int main(){
+    cout<<"The sum of 3 and 6 is "<<sum(3,6)<<endl;
+    cout<<"The sum of 3, 7 and 6 is "<<sum(3, 7, 6)<<endl;
+    cout<<"The volume of cuboid of 3, 7 and 6 is "<<volume(3, 7, 6)<<endl;
+    cout<<"The volume of cylinder of radius 3 and height 6 is "<<volume(3, 6)<<endl;
+    cout<<"The volume of cube of side 3 is "<<volume(3)<<endl;
+    return 0;
+}

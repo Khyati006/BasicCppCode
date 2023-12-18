@@ -1,0 +1,448 @@
+//1. pattern 1
+int main(){
+    int n;
+    cout<<"enter i and j:";
+    cin>>n;
+    for(int i=0;i<n;i++){
+        for (int j=0;j<n;j++){
+            cout<<"*"<<"";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
+
+//2. pattern 2
+int main(){
+    int n;
+    cin>>n;
+    for(int row=0;row<=n;row++){
+        for(int col=0;col<row;col++){
+                cout<<"*";
+            }
+             cout<<endl;
+        }
+        cout<<endl;
+        return 0;
+    }
+
+//3. pattern3
+int main(){
+    int n;
+    cin>>n;
+    for(int row=1;row<=n;row++){
+        for(int col=1;col<=row;col++){
+                cout<<col;
+            }
+             cout<<endl;
+        }
+        return 0;
+    }
+
+//4. pattern 13
+int main(){
+    int n;
+    cin>>n;
+    int number=1;
+    for(int row=1;row<=n;row++){
+        for(int col=1;col<=row;col++){
+                cout<<number<<" ";
+                number=number+1;
+            }
+             cout<<endl;
+        }
+        return 0;
+    }
+
+//5. pattern4
+int main(){
+    int n;
+    cin>>n;
+    int number=1;
+    for(int row=1;row<=n;row++){
+        for(int col=1;col<=row;col++){
+                cout<<row<<" ";
+            }
+             cout<<endl;
+        }
+        return 0;
+    }
+
+//6. pattern 5
+int main(){
+    int n;
+    cin>>n;
+
+    for(int row=0; row<n; row++){
+
+         for(int col=0; col<n-row; col++){
+
+             cout<<"*"<<" ";
+
+         }
+		cout<<endl;
+	}
+        return 0;
+}
+
+//7. pattern6
+int main(){
+    int n;
+    cin>>n;
+
+    for(int row=1; row<=n; row++){
+         for(int col=1; col<=n-row+1; col++){
+             cout<<col<<" ";
+         }
+		cout<<endl;
+	}
+        return 0;
+}
+
+//8. pattern 16
+int main(){
+	int n;
+	cout<<"Enter n:";
+	cin>>n;
+	char ch='A';
+	for(int row=0;row<=n;row++){
+		for(int col=0;col<=row;col++){
+			cout<<ch;
+		}
+		cout<<endl;
+		ch++;
+	}
+
+	return 0;
+}
+
+//9. pattern 14
+int main(){
+	int n;
+	cout<<"Enter n:";
+	cin>>n;
+
+	for(int row=0;row<=n;row++){
+		for(int col=0;col<row;col++){
+			char ch='A'+col;
+			cout<<ch;
+		}
+		cout<<endl;
+	}
+
+	return 0;
+}
+
+//10. pattern 15
+int main(){
+	int n;
+	cout<<"Enter n:";
+	cin>>n;
+
+	for(int row=0;row<=n;row++){
+		for(int col=0;col<n-row;col++){
+			char ch='A'+col;
+			cout<<ch;
+		}
+		cout<<endl;
+	}
+
+	return 0;
+}
+
+//11. pattern21
+int main(){
+	int n;
+	cout<<"Enter n:";
+	cin>>n;
+
+	for(int row=0;row<n;row++){
+		for(int col=0;col<n;col++){
+			if(row==0 || col==0 || row==n-1|| col==n-1){
+				cout<<"*";
+		}
+			else{
+				cout<<" ";
+			}
+		}
+		cout<<endl;
+	}
+
+
+	return 0;
+}
+
+//12. pattern22 bruteforce
+int main(){
+	int n;
+	cout<<"Enter n:";
+	cin>>n;
+
+	for(int row=1;row<n*2;row++){
+		for(int col=1;col<n*2;col++){
+			if(row==1 || col==1 || row==n*2-1| col==n*2-1){
+				cout<<n;
+		}
+			else if(row==2 || col==2 || row==n*2-2|| col==n*2-2){
+				cout<<n-1;
+			}
+			else if(row==3 || col==3 || row==n*2-3|| col==n*2-3){
+				cout<<n-2;
+			}
+			else if(row==4 || col==4 || row==n*2-4|| col==n*2-4){
+				cout<<n-3;
+			}
+			else{
+				cout<<" ";
+			}
+		}
+		cout<<endl;
+	}
+
+
+	return 0;
+}
+
+//13. pattern7
+for(int i=1;i<=n;i++){
+            for(int s=1;s<=n-i;s++){
+                cout<<" ";
+            }
+            for(int j=1;j<=2*i-1;j++){
+                cout<<"*";
+            }
+            cout<<endl;
+        }
+       return 0;
+    }
+
+//14.pattern 8
+int main(){
+	int n;
+	cout<<"Enter the n:";
+	cin>>n;
+	for(int i=n; i>0; i--){
+	        
+	        for(int s=n-i; s>0; s--){
+	            cout<<" ";
+	        }
+	        
+	        for(int j=1; j<=2*i-1; j++){
+	            cout<<"*";
+	        }
+	        
+	        cout<<endl;
+	    }
+		return 0;
+	}
+
+//15. pattern9
+int main(){
+	int n;
+	cout<<"Enter the n:";
+	cin>>n;
+	//upper traingle
+	for(int i=1;i<=n;i++){
+            for(int s=1;s<=n-i;s++){
+                cout<<" ";
+            }
+            for(int j=1;j<=2*i-1;j++){
+                cout<<"*";
+            }
+            cout<<endl;
+        }
+
+	//lower triangle
+	for(int i=n; i>0; i--){
+	        
+	        for(int s=n-i; s>0; s--){
+	            cout<<" ";
+	        }
+	        
+	        for(int j=1; j<=2*i-1; j++){
+	            cout<<"*";
+	        }
+	        
+	        cout<<endl;
+	    }
+		return 0;
+}
+
+//16. pattern 10
+int main(){
+	int n;
+	cout<<"Enter the n:";
+	cin>>n;
+	//upper traingle
+	for(int i=1;i<=n;i++)
+        {
+            for(int j=1;j<=i;j++)
+            {
+                cout<<"* ";
+            }
+            cout<<endl;
+        }
+
+		//lower triangel
+        for(int i=1;i<=n-1;i++)
+        {
+            for(int j=i;j<=n-1;j++)
+            {
+                cout<<"* ";
+            }
+            cout<<endl;
+        }
+		 return 0;
+    }
+
+//17. pattern 19
+int main(){
+	int n;
+	cout<<"Enter the n:";
+	cin>>n;
+
+	//first print upper two triangle with space inbetween
+	for(int i=n;i>=1;i--){
+            for(int j=1;j<=i;j++){
+                cout<<"*";
+            }
+            for(int spc=1;spc<=2*(n-i);spc++){
+                cout<<" ";
+            }
+            for(int j=1;j<=i;j++){
+                cout<<"*";
+            }
+            cout<<endl;
+        }
+        
+    //    //lower incremented triangle with space in between 
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=i;j++){
+                cout<<"*";
+            }
+            for(int spc=1;spc<=2*(n-i);spc++){
+                cout<<" ";
+            }
+            for(int j=1;j<=i;j++){
+                cout<<"*";
+            }
+            cout<<endl;
+        }
+		return 0;
+    }
+
+//18. pattern17
+int main(){
+	int n;
+	cout<<"Enter the n:";
+	cin>>n;
+
+	for(int i=0;i<n;i++)
+        {	//space
+             for(int s=n-1;s>i;s--){
+                 cout<<" ";
+             }
+			 //alpha asc
+             for(int j=0;j<=i;j++){
+				char ch='A'+j;
+                 cout<<ch;
+             }
+			 //alpha desc
+             for(int j=i-1;j>=0;j--){
+				 char ch='A'+j;
+                 cout<<ch;
+             }
+             cout<<endl;
+        }
+		return 0;
+    }
+
+//19. pattern 11
+int main(){
+	int n;
+	cout<<"Enter the n:";
+	cin>>n;
+
+
+	for(int i=0;i<n;i++)
+		if(i%2==0){
+			for(int j=0;j<=i;j++){
+
+				if(j%2==0){
+					cout<<"1 ";
+				}
+				else{
+					cout<<"0 ";
+				}
+			}
+			cout<<endl;
+		}
+
+		else{
+			for(int j=0;j<=i;j++){
+				if(j%2==0){
+					cout<<"0 ";
+				}
+				else{
+					cout<<"1 ";
+				}
+			}
+			cout<<endl;
+		}
+		return 0;
+    }
+
+//20. pattern 12
+int main(){
+	int n;
+	cout<<"Enter the n:";
+	cin>>n;
+	
+	//first triangle
+	for(int i=1;i<=n;i++){
+		//first triangle
+		for(int j=1;j<=i;j++){
+			cout<<j;
+		}
+		//spaces
+		for(int s=1;s<=(n*2)-(i*2);s++){
+			cout<<" ";
+		}
+		//second triangle
+		for(int j=i;j>0;j--){
+			cout<<j;
+		}
+		cout<<endl;
+	}
+
+	return 0;
+
+}
+
+//21. pattern 18
+int main(){
+	int n;
+	cout<<"Enter the n:";
+	cin>>n;
+
+        for(int i=0;i<n;i++)
+        {
+            char ch='A'+n-1;
+            for(int j=0;j<=i;j++)
+            {
+                cout<<ch<<" ";
+                ch--;
+            }
+            cout<<endl;
+        }
+        return 0 ;
+}
+//22.pattern 20
+
+
+
+
+
+
+
+
